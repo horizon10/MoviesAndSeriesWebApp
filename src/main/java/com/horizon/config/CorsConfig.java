@@ -1,4 +1,4 @@
-package com.horizon.configuraion;
+package com.horizon.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

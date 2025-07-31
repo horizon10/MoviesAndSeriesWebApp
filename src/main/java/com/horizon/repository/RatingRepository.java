@@ -1,11 +1,15 @@
 package com.horizon.repository;
 
 import com.horizon.entity.Rating;
+import com.horizon.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.http.MediaType;
+
 import java.util.List;
 import java.util.Optional;
 
 public interface RatingRepository extends JpaRepository<Rating, Long> {
-    List<Rating> findByMovieImdbId(String imdbId);
-    Optional<Rating> findByMovieImdbIdAndUserId(String imdbId, String userId);
+    Optional<Rating> findByUserIdAndImdbId(Long userId, String imdbId);
+    List<Rating> findByImdbId(String imdbId);
+    Optional<Rating> findByUserAndImdbId(User user, String imdbId);
 }
