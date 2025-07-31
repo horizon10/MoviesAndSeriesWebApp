@@ -1,4 +1,4 @@
-package com.horizon.security;
+package com.horizon.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
