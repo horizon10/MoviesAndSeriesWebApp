@@ -44,18 +44,4 @@ public class UserService {
         user.setRole(newRole);
         return userRepository.save(user);
     }
-
-    public User loginUser(String email, String password) {
-        // Veritabanında kullanıcıyı e-posta ile ara
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("Kullanıcı bulunamadı."));
-
-        // Şifreyi kontrol et
-        if (!passwordEncoder.matches(password, user.getPassword())) {
-            throw new RuntimeException("Geçersiz şifre.");
-        }
-
-        // Eğer doğrulama başarılıysa, kullanıcıyı döndür
-        return user;
-    }
 }
